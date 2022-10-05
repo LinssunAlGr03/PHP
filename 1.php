@@ -1,25 +1,27 @@
 <?php
 
-
-function e()
-{
-    exit("Неверный ввод");
-}
-
-set_error_handler('e');
-
 echo calculator($argv[1]);
 
 function calculator(string $primer): string
 {
-    $simvoly = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '+', '-', '*', '/');
+    $symbols = "1234567890+-*/";
+
     for ($i = 0; $i <= strlen($primer); $i++) {
-        if (in_array(substr($primer, $i, 1), $simvoly) === false) {
-            return "Неверный ввод";
+        for ($u = 0; $u <= strlen($symbols); $u++) {
+            if (substr($primer, $i, 1) == substr($symbols, $u, 1)) {
+                break;
+            }
+            if ($u === strlen($symbols)) {
+                return "Ошибка";
+            }
         }
     }
 
-    $result = eval('return '.$primer.';');
+    $result = @eval('return '.$primer.';');
+
+    if ($result === INF) {
+        return "Делить на ноль нельзя";
+    }
 
     return $result;
 }
