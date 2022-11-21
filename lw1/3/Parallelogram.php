@@ -8,13 +8,14 @@ abstract class Parallelogram extends Shape
 
     function __construct(float $var1, float $var2, float $var3)
     {
-        $this->width = $var1;
-        $this->height = $var2;
-        $this->angle = $var3;
         if ($this->width <= 0 || $this->height <= 0 ||
         $this->angle <= 0 || $this->angle >= 180) {
             throw new Exception("Ошибка в размерах");
         }
+        $this->width = $var1;
+        $this->height = $var2;
+        $this->angle = $var3;
+
     }
 
     public function getPerimeter(): float
