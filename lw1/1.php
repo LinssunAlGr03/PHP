@@ -2,7 +2,7 @@
 
 class Calculator
 {
-    private $result = 0;
+    private float $result = 0;
 
     public function sum(float $var)
     {
@@ -39,8 +39,7 @@ class Calculator
 
     public function reset()
     {
-      $this->result = 0;
-      return "";
+      return $this->result = 0;;
     }
 }
 
