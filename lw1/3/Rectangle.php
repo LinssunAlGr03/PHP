@@ -8,11 +8,11 @@ abstract class Rectangle extends Shape
 
     function __construct(float $var1, float $var2)
     {
-        $this->side1 = $var1;
-        $this->side2 = $var2;
         if ($this->side1 <= 0 || $this->side2 <= 0) {
             throw new Exception("Ошибка в размерах");
         }
+        $this->side1 = $var1;
+        $this->side2 = $var2;
     }
 
     public function getPerimeter(): float
