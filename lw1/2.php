@@ -2,9 +2,9 @@
 
 class Date
 {
-    private $day;
-    private $month;
-    private $year;
+    private int $day;
+    private int $month;
+    private int $year;
 
     public function __construct($day, $month, $year)
     {
@@ -43,10 +43,10 @@ class Date
 
     public function format(string $format) : string
     {
-        if ($format == "en") {
+        if ($format === "en") {
             return "{$this->year}-{$this->month}-{$this->day}";
         }
-        elseif ($format == "ru") {
+        elseif ($format === "ru") {
             return "{$this->day}-{$this->month}-{$this->year}";
         }
         else {
