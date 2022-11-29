@@ -6,20 +6,17 @@ class Calculator
 
     public function sum(float $var)
     {
-        $this->result += $var;
-        return $this;
+        return $this->result += $var;
     }
 
     public function minus(float $var)
     {
-        $this->result -= $var;
-        return $this;
+        return $this->result -= $var;
     }
 
     public function product(float $var)
     {
-        $this->result *= $var;
-        return $this;
+        return $this->result *= $var;
     }
 
     public function division(float $var)
