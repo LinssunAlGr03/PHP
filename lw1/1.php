@@ -4,22 +4,22 @@ class Calculator
 {
     private float $result = 0;
 
-    public function sum(float $var)
+    public function sum(float $var):float
     {
         return $this->result += $var;
     }
 
-    public function minus(float $var)
+    public function minus(float $var):float
     {
         return $this->result -= $var;
     }
 
-    public function product(float $var)
+    public function product(float $var):float
     {
         return $this->result *= $var;
     }
 
-    public function division(float $var)
+    public function division(float $var):float
     {
         if ($var === 0.0) {
             throw new Exception("Деление на ноль");
@@ -29,14 +29,14 @@ class Calculator
         }
     }
 
-    public function getResult()
+    public function getResult():float
     {
         return $this->result;
     }
 
-    public function reset()
+    public function reset():float
     {
-      return $this->result = 0;;
+      return $this->result = 0;
     }
 }
 
