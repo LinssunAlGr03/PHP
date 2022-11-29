@@ -21,7 +21,7 @@ class Calculator
 
     public function division(float $var)
     {
-        if ($var == 0) {
+        if ($var === 0.0) {
             throw new Exception("Деление на ноль");
         } else {
             $this->result /= $var;
