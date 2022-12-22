@@ -38,14 +38,14 @@ function addUser()
         $ID = $array['users'][count($array['users']) - 1]['id'] + 1;
     }
 
-    $Login = readline('Логин: ');
-    $Password = readline('Пароль: ');
-    $Name = readline('Имя: ');
+    $login = readline('Логин: ');
+    $password = readline('Пароль: ');
+    $name = readline('Имя: ');
     $user = array(
         'id' => $ID,
-        'login' => $Login,
-        'password' => $Password,
-        'name' => $Name
+        'login' => $login,
+        'password' => $password,
+        'name' => $name
     );
     $array['users'][] = $user;
     file_put_contents('users.json', json_encode($array));
@@ -54,9 +54,9 @@ function addUser()
 function editUser()
 {
     $ID = intval(readline('Введите ID: '));
-    $Login = readline('Введите логин: ');
-    $Password = readline('Введите пароль: ');
-    $Name = readline('Введите имя: ');
+    $login = readline('Введите логин: ');
+    $password = readline('Введите пароль: ');
+    $name = readline('Введите имя: ');
 
     $find = null;
     $array = json_decode(file_get_contents('users.json'), true);
@@ -75,9 +75,9 @@ function editUser()
     }
     $user = array(
         'id' => $ID,
-        'login' => $Login,
-        'password' => $Password,
-        'name' => $Name
+        'login' => $login,
+        'password' => $password,
+        'name' => $name
     );
     $array['users'][$find] = $user;
     file_put_contents('users.json', json_encode($array));
